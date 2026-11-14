@@ -1,0 +1,267 @@
+samenvattingen:
+CHAPTER 1
+slide 1 :
+Good morning everyone, I'm Youri Nijs, and today we'll be talking about Software development as a teamsport. And why writing great code isn't just about typing.
+
+slide 2 :
+We'll be dividing the workshop in 4 chapters. The first chapter will be a small introductionary chapter about asking the right questions. 
+The second is about Conway's law
+The third is how developers share knowledge
+And the fourth is a workshop, where you will be experiencing mob or ensemble programming.
+
+slide 3 :
+Before we really get started, a small disclaimer: AI was used as a presentation aid. But all opinions and examples are my own. No humans were harmed in the making of.
+
+slide 4 :
+Right, first chapter - Introduction. let's get into it.
+
+slide 5 :
+So I'll start with a little background story about myself. I'm an Agile Dev coach & architect nowadays. I had 7 to 8 years experience before as a hands-on developer, and I still really love good engineering. After those initial 7 to 8 years I shifted focus to architecture & coaching where the biggest challenge is not writing great code, wonderfull architecture and speedy delivery. But making sure it is still maintainable and understandable if I shift to another client or project. In my opinion the difference between a junior or senior developer is not his knowledge about frameworks, libraries or syntax, but is about how good he is transferring knowledge to other people, whether they are developers or not.
+
+slide 6 :
+So I already gave you same hints what a software developer does. But let's ask you people. What do you think?
+... (wijs een aantal mensen aan om te antwoorden - en hopelijk komt er iets zinnigs uit :-))
+
+slide 7 :
+So we heard a lot of things developers should do, here are some things I wrote down which came to my mind immediately. We can all agree
+writing code is not the only job a developer does.
+
+>> NEXT <<
+Oh and before I forget, drinking coffee is also really important ... although I think that's probably just me. :-)
+
+TODO ikke die koffie drinkt toevoegen..
+
+slide 8 :
+Next, let's do a small raise your hand game. So if you agree on the next question, please raise your hand.
+
+>> NEXT <<
+So everyone, raise your hand if you've played or still play a team sport like football, rugby, hockey, ...
+
+>> NEXT <<
+... and wondered you win because you play as a team?
+
+>> afwachten handjes - eventueel mensen aanduiden om iets te antwoorden... <<
+
+>> NEXT <<
+Next, raise your hand if you were or are in a youth or other organisation like scouts, chiro or other volunteer work...
+
+>> NEXT <<
+...
+and felt the best way to organize events is to do it together, at least with a small group of people instead of you alone
+
+>> afwachten handjes - eventueel mensen aanduiden om iets te antwoorden <<
+
+Right, ... so for teamsport and chiro we don't hesitate to work together? It feels like common sense, right?
+
+slide 9 :
+Now let's go closer to software development. And just to be clear, next questions are in general, not related to your current work or study groups. We don't want to start a fight here :-).
+
+>> NEXT <<
+
+Raise your hand if You've ever done a group project before...
+>> NEXT <<
+... and felt like you ended up doing all the work yourself
+
+>> afwachten handjes - eventueel mensen aanduiden om iets te antwoorden <<
+
+You ever joined a software, or other project, halfway through
+>> NEXT <<
+... and felt the urge to redo everything because you think it was bad, or simply because you don't understand it.
+
+>> afwachten handjes - eventueel mensen aanduiden om iets te antwoorden <<
+
+Interestingly enough, most people experienced these things. And we all find them frustrating as well.
+What is the reason? Why do we experience this?
+
+slide 10 :
+So by simply playing a small raise your hands game, we could assume the following.
+
+In most teams, writing code is only a small part of the job. Because most of the software problems are not of technical sort, but rather human. They are often communication and/or knowledge sharing problems. And this is the most important thing to remember. A good technical solution has zero worth if it is not transferable to other people.
+
+----------------
+CHAPTER 2
+slide 11 :
+Right, the first chapter was a warm-up. Let's dive deeper. Let's talk about Conway's Law and Team Topologies.
+This will be a quite academic chapter, and we will keep it as short as possible, no worries.
+
+So Conway's Law or Team Topologies, raise your hand if you ever heard of these two?
+
+>> afwachten handjes - inpikken op het aantal handjes ... <<
+
+slide 12 :
+So let's simply read out what Conway's Law mean : 
+“Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.”
+
+slide 13 :
+Let's discuss a few examples, which I encountered in real projects
+
+The first example is about tech oriented teams. For example, we have a front end team working with React, a back end team mainly working with Java
+and a database team which handles all DBA related magic. What do you think could be an issue...?
+
+>> afwachten handjes - aan het woord laten <<
+
+>> NEXT <<
+
+We can agree that they each have their own expertise, but lack the concerns of the others. This can become an increasing risk or even a serious threat.
+
+>> NEXT <<
+
+Now the next example is about domain functionality which have no clear interfaces to the others. For example, we have a team fulfilling all
+customer facing features, another squad doing the service desk things, and last team doing the (technical) administration and monitoring.
+Again, what could go wrong here?
+
+>> afwachten handjes - aan het woord laten <<
+
+Again we can conclude that the resulting architecture will probably reflect organizational choices. Sometimes that helps, sometimes it creates friction.
+
+>> NEXT <<
+
+Your codebase(s) and corresponding architecture will match your squads.
+
+slide 14 :
+Let's discuss another antipattern, which is often present in ill organized teams : The Hero Developer or The Ivory Tower Architect
+In the previous example with the 3 tech stack oriented teams. Probably there will be a tech lead or technical architect who tries to keep the overview of all systems and subsystems. In this case a Hero Developer or Architect will rise up. It is also often one of the team members who has been the longest in the organization or team. He has the tendency to consolidate architecture in his 'head', and the teams often feel like a strong hierarchical relation starts to exist.
+
+A few possible issues arise, The Hero Developer:
+
+>> NEXT <
+Siloed Ownership. Instead of a team being responsible for a whole system, single developers are responsible for parts of a system or application.
+A few legendary expressions or details we discover with this.
+
+>> NEXT <
+Bus Factor = 1
+Another issue is that usually only this person has the courage to take ownership. Imagine Sarah is on holiday, but a bug arises in her 'code'.
+Changes are a dirty hotfix will be created or the bug remains in place until she returns. Basically no-one takes ownership. And all knowledge remains inside Sarah's head.
+
+slide 15 :
+Next a really brief summary of Team Topologies. We could and should organize teams around 'Value Streams'. The Stream-Aligned teams are focussed on really producing business value for the organization and are not centered around a technical or functional concern. Most of the teams in an organization are value stream teams.
+
+The other teams are there to support these teams. The enabling team help teams to grow in skill, knowledge, learn new technologies, etc. For example a team has no experience
+in nosql databases and an expert in the enabling team can help them out.
+
+The platform team takes away certain concerns which tend to arise in every team. F.e. monitoring, logging, authentication, etc. The platform team provides utility and often
+acts out an X-as-a-service view to deliver common features to the other teams.
+
+The last one complicated subsystem teams are not always present but can be very usefull around a specific domain expertise. For example working with GIS coordinates or complex Math algorithms
+can be very difficult for each team to adopt or achieve. This knowledge can be centralized in a complicated-subsystem team to tackle the challenges around this difficult domains.
+
+The biggest difference between platform and complicated-subsystem teams are in the needs they provide a solution. The platform team simply handles verbose complexity and reduce duplication, by introducing internal products and common components. These things could be done in theory by everyone. It is not complex.
+The complicated-subsystem on the other is often very complex and difficult to implement or understand. It is not uncommon to be very specific (non-technical related) knowledge is required, like
+complex mathematics, biology, chemical reactions, etc.
+For example, I worked for an air transport company where they developed load & balancing systems for cargo planes. Loading containers in a plane requires a specific order and things need to be made sure that the plane is correctly loaded. Otherwise, a tailtip or even a disastrous plane chrash could happen.
+
+There are 3 basic ways these teams interact with each other:
+* Collabaration
+* X-as-a-service
+* Facilitating
+
+Collaboration means often working very closely temporarily
+Facilitating means mentoring or coaching other teams to grow better and faster (f.e. workshops around TDD, or ... this workshop ...)
+X-as-a-service : the team views the service as an internal product. This is very common between platform and stream aligned teams.
+
+So we conclude this chapter and the main things to remember:
+* focus teams around value, not around technical skills
+* communication is really key to achieve success.
+
+---------
+CHAPTER 3
+slide 16 :
+pfieuw, that was the theoretical part.
+Now let's look further into the dev knowledge sharing part and how members in a team work together. You noticed i didn't mention developers? Because in theory, next chapter also applies
+to non-technical work. Or even a combination, f.e. 3 developers working together with a business analyst.
+
+So how do developers work together? Any ideas? How could developers work together, and share knowledge between each other?
+
+>> interactie met het publiek <<
+
+slide 17:
+We could identify 5 types of team collaboration between devs.
+The first one is ... Not at all.
+The second is by creating pull requests or code reviews
+The third is by pair reviewing
+The fourth is by pair programming
+And the last is mob programming and even further XP practices.
+
+A sneak peak is from left to right, the communication bandwidth increases, the feedback, QA and knowledge transfer becomes earlier. Also note that some other combinations exist like pair programming can be with pair reviewing (f.e. 2 people work together, and they share knowledge to the other pairs through a pair review)
+
+slide 18:
+So the first one, and should we even wonder it a way of working together, is by simply not working together at all. You handle features alone, you merge them in main branch individually.
+And this way of working often results in poor maintainability and promotes hero developers. A few legendary expression we see here...
+
+It looks like I'm really strongly advising to stay clear of this way of working but i'm not. This way of working is fine, as long as you delete your code at the end of the day...
+
+slide 19:
+Next stop is creating pull requests and code requests. This is in my experience the most applied way of working in organizations.
+It is also very common in community-driven repositories where everyone can add or change features or fix bugs.
+A developer still work individually. It is at the end of a specific change that he creates a PR. So the feedback loop is still very late. Also there's a big change the PR remains open for a long period of time, especially when the reviewer asks more clarification or changes on the PR. Because it is async, both the developer and the reviewer have to context switch every time which causes time lost every time.
+There's also a huge change that architectural remarks are simply 'shoved under the doormat' and simply not resolved. So suboptimal architectural solutions go to production and ... will never get fixed...
+Oh and the last one, is also very common and legendary when reviewing a PR which touched thousands of files. After opening the PR, it takes 5 minutes and it gets approved with 'LGTM' thumbs up. For sure the review was done very thoroughly. A very delicate starts to exist. Do we create a lot of small pull requests which causes a serious load to the reviewer as he has to review multiple requests a day. Or do we create big bloaty pull requests which are simply impossible to review. These kinds of review usually leads to a simple rejection, or the before mentioned 'auto-approve' as long as the builds looks green ...
+
+slide 20 :
+Next, the synchronous reviews, which i call pair reviews. It is still about a developer working alone. But instead of creating a pull requests, he asks one or more developers to join him to look through the changes. The advantage of this is that feedback and clarification is done immediately. The disadvantage is that the QA and review still happens at the end of the 'work'. Also the other disadvantages still apply:
+* issues in architecture or big code parts are simply ignored because work is 'already' done and it takes too much time to redo everything.
+* again delicate balance between small reviews (causing multiple reviews a day) vs large reviews which could take VERY long, resulting in focus loss, and eventually reviewing quality decreases.
+
+slide 21 :
+Pair programming. Which is getter more and more common nowadays, is 2 people, it could in theory be one developer and one analyst, share a keyboard and working together on a feature, change or bug. The biggest advantage is the feedback is immediate during development. This also means QA is done as early as possible and prevents from implementations being developed because requirements are misinterpreted. This usually is combined with pair reviews or technical demo time to other pairs or developers. For smaller changes it is common to not have them reviewed by other developers.
+
+slide 22 :
+And the last one ... ensemble or mob programming. It is literally working all together on the same feature. The biggest advantage is that the feedback loop is immediate and knowledge transfer is done continuously. It is, in my opinion the best way of working together, but feels the slowest. As discussed before however the biggest gain is later on. Because everyone knows the code base, there is no dependency on individuals. Also the QA is done with the whole team which simply increases quality and reduces bug load. Especially the latter one causes more individual way of working to cause slower delivery speed later on.
+
+slide 23 :
+Oh, and I couldn't resist to not mention this. mob programming is often included or combined with XP.
+
+TDD : Basicly means you write a test before you write any implementation. And clearly define what a unit of work is, in your unit tests.
+Real CI/CD : Means you commit to main as often as possible, and continuously push these changes to production. Bugs could still appear in production, but at least they are fixed really fast. Big releases however still not prevent bugs (on the contrary) but increases the difficulty to fix bugs appropriately. Who all know the cases where a bugfix introduces two other bugs?
+And lastly the focus on continously refactoring. An XP dare never turns away to improve, refactor or even rework parts of code. Because the knowledge and trust in the existing code and tests are high, the risks are low and confidence is high.
+
+slide 24:
+As a bonus and it is really relevant nowadays - a small keynote about AI in all of this.
+
+* first of all: AI is a tool. Whatever the case, business (and technical) knowledge still needs to be in peoples head.
+* AI could be the ultimate driver.
+* But humans should always be the one who are telling AI what to implement.
+* Most importantly, if you can't 'navigate' a human, you probably cannot navigate an AI. AI will then simply produce faulty results faster.
+
+slide 25:
+A small nuance i'd like to add. I'm not saying that mob programming is the only way to work together. There are situations where it is ok to simply create a PR. In reality a combination of ways
+are often applied. For example my current client applies all of them. For example:
+* A simple label change is nothing that needs to be reviewed, we just do it.
+* A PR is sufficient for a small config change.
+* A Pair is ok when we investigate an issue why a pricing detail applied a wrong price.
+* But ... we did a whole mobbing session when we were reworking and redesigning the projections of our event streams and moving away from our stateful datasets. As this had a very huge impact on both our technical implementation and functional domain.
+
+So let's conclude:
+* Teams needs to be sized accordingly. 15 people together cannot mob together efficiently.
+* A combination is most appropiate
+* Remember chapter 2 - organization and therefor architecture and domain structures impact how developres can work together.
+------------
+CHAPTER 4
+slide 25:
+And now, workshop time. I hope everyone is ready to do some development themselves and we're ready to do some mob programming ourselves. Before we dive in, some considerations and explanations we have to make.
+
+slide 26:
+First and most importantly is a safe environment. This probably feels cheesy but believe me this is the cornerstone of successful collaboration. Let's go back to the team sports, what happens when you don't trust your team; or you trust a specific player in your soccer team?
+
+>> vragen aan publiek <<
+
+Indeed, we act as a weaker team. Distrust is the biggest enemy in a team. Trust is everything. No trust = no team.
+So every member should not be afraid to ask questions. There are no wrong questions, there are only wrong silences. This also implies that there is no hierarchy during a mobbing session.
+Whather you are a junior, senior, architect or mentor.
+
+slide 27:
+In a mob there are 3 roles. Driver, Navigator and spectators.
+Driver is the one who holds the keyboard. He should not be typing when the navigator is quiet or any discussions going on.
+Navigator is ... the one navigating. He is telling the driver the why and how things are done.
+Spectators follow, and remain ready to take over as driver or navigator in next rotation. For this workshop we rotate every 5 minutes.
+Maybe a good practice to get used to, is when anyone wants to interrupt the mob, is simply raise your hand. As soon as anyone raises his hand, the mob session stops and the driver nor navigator should continue.
+
+slide 28:
+Let's do a little live demo. Who wants to be a volunteer to join me up here?
+>> vrijwilliger aanduiden - als er niemand zijn hand opsteekt kan de docent(e) naar voor <<
+
+... (live demo 5 minuten + korte feedback & herhalen pitfalls)
+
+slide 29:
+And now, up to you. Make groups of 4-5 people and
+
