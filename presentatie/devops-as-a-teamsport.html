@@ -655,29 +655,47 @@
 
 <section class='slide'>
     <div class='card' style='cursor: pointer;'>
-        <span class='badge'>Your Turn: FizzBuzz Kata (Java)</span>
-        <div class="grid-2">
-            <div>
-                <p>Scenarios</p>
-                <ul class='bullets'>
-                    <li>input <em>null</em> → Output <em>null</em></li>
-                    <li>input 1 → Output 1</li>
-                    <li>input FizBuz → Output FizBuz</li>
-                    <li>input 3 → Output Fizz</li>
-                    <li>input 5 → Output Buzz</li>
-                    <li>input 15 → Output FizzBuzz</li>
-                </ul>
-            </div>
-            <div>
-                <pre><code>public static String fizzbuzz(int n) {
-    // Implement together as a mob!
+        <span class='badge'>Your Turn: FizzBuzz Kata (Shell/Bash)</span>
+        <div>
+            <p>Scenarios</p>
+            <ul class='bullets'>
+                <li>input <em>null</em> → Output <em>null</em></li>
+                <li>input 1 → Output 1</li>
+                <li>input FizBuz → Output FizBuz</li>
+                <li>input 3 → Output Fizz</li>
+                <li>input 5 → Output Buzz</li>
+                <li>input 15 → Output FizzBuzz</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='card' style='cursor: pointer;'>
+        <span class='badge'>Your Turn: FizzBuzz Kata (Shell/Bash)</span>
+        <div>fizzbuzz.sh:
+            <pre><code>#!/usr/bin/env bash
+
+fizzbuzz() {
+    local num="$1"
+    # ...
+}</code></pre>
+
+            test_fizzbuzz.bats
+            <pre><code>#!/usr/bin/env bats
+
+setup() {
+    source "${BATS_TEST_DIRNAME}/fizzbuzz.sh"
 }
 
-@Test
-public void testFizzBuzz() {
-    // tests...
-}</code></pre>
-            </div>
+@test "fails when no argument is provided" {
+    run fizzbuzz
+    [ "$status" -eq 1 ]
+    [ "$output" = "Error: Valid positive integer required" ]
+}
+
+# other tests ...
+</code></pre>
         </div>
     </div>
 </section>
@@ -717,6 +735,7 @@ public void testFizzBuzz() {
             <li><strong>The Clean Coder</strong> - Robert C. Martin (Uncle Bob)<br/><br/></li>
             <li><strong>The Phoenix Project</strong> - Gene Kim, Kevin Behr &amp; George Spafford</li>
             <li><strong>Accelerate</strong> - Nicole Forsgen, Jez Humble &amp; Gene Kim</li>
+            <li><strong>Test Driven Development (By Example)</strong> - Kent Beck</li>
             <li>...</li>
         </ul>
     </div>
